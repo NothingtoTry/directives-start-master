@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Odd numbers only</button>
+      <br><br>
+          <ng-template [ngIf]="onlyOdd">
+            <ul>
+              <ng-container *ngFor="let odd of is odd(numbers); let i = index">
+                <li *ngIf="odd">{{ numbers[i] }}</li>
+              </ng-container>
+            </ul>
+          </ng-template>
+            <p style="background-color: lawngreen; color: black;">Only odd</p>
+            <p style="font-family: 'Times New Roman', Times, serif; background-color: yellow; color: black;">No Even</p>
+            <p>Value is Default</p>
+          
+    </div>
+  </div>
+</div>
